@@ -10,7 +10,7 @@ def muke_sign_in(playwright: Playwright) -> None:
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://www.icourse163.org/")
-    page.get_by_role("button", name="登录/注册").click()
+    page.get_by_role("button#submit", name="登录/注册").click()
     page.locator("[id=\"x-URS-iframe1746708770238\\.3132\"]").content_frame.locator("#auto-id-1746708772405").click()
     page.locator("[id=\"x-URS-iframe1746708770238\\.3132\"]").content_frame.get_by_role("textbox", name="请输入手机号").click()
     page.locator("[id=\"x-URS-iframe1746708770238\\.3132\"]").content_frame.get_by_role("textbox", name="请输入手机号").fill(account)
