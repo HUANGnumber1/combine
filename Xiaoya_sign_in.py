@@ -36,7 +36,7 @@ def run(playwright: Playwright) -> None:
       element = page.locator('.xy_taskCard_bottom')
       #spanText = element.locator('span').text_content()
       for i in range(element.count()):#此处填入element的长度计算,len不能用
-            spanText = element.nth(i).text_content()
+            spanText = element.nth(i).locator('span').text_content()
             print(spanText)
       # reading(page)
       # ---------------------
